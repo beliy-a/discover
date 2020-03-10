@@ -1,0 +1,17 @@
+
+.button {
+    font-size: 24px;
+    background-color: $secondary-color;
+    padding: 15px 40px;
+    margin-left: 60px;
+    border: none;
+    color: $title-color;
+    text-transform: uppercase;
+    transition: .15s linear;
+     @include fontFamily(500);
+                    
+     &:hover,
+     &:focus {
+         background-color: rgba($color: $secondary-color, $alpha: .6);
+    }
+}  

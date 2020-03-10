@@ -1,0 +1,136 @@
+.places {
+    margin-bottom: 130px;
+    @include sm {
+        margin-bottom: 60px;
+    }
+    
+    &__wrap {
+        @include wrap(1260px);
+    }
+
+    &__flex {
+        @include flexBetween;
+        margin-bottom: 45px;
+
+        @include sm {
+            @include flex(column, $align: flex-start);
+        }
+    }
+
+    &__title {
+        font-size: 35px;
+        color: $primary-color;
+        position: relative;
+
+        @include sm {
+            margin-bottom: 20px;
+            font-size: 27px;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            @include size(250px, 2px);
+            background-color: $secondary-color;
+        }
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-gap: 10px;
+        overflow: hidden;
+        
+
+        [class^="places__card"] {
+            position: relative;
+            overflow: hidden;
+        
+
+            &:hover img {
+                transform: scale(1.1);
+            }
+
+            &::before {
+                content: '';
+                display: block;
+                @include size(100%, 100%);
+                background-color: rgba(21, 24, 36, 0.4);
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 2;
+            }
+
+            img {
+                object-fit: cover;
+                transition: .5s ease-in-out;
+                
+            }
+
+            figcaption {
+                font-size: 40px;
+                @include fontFamily(700);
+                position: absolute;
+                bottom: 25px;
+                left: 30px;
+                z-index: 3;
+                color: $title-color;
+
+                @include sm {
+                    font-size: 30px;
+                }
+            }
+
+            a {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 4;
+            }
+
+            &[class$='--lg'] {
+                grid-column: span 3;
+                max-height: 300px;
+
+                @include sm {
+                   grid-column: span 6;
+                   max-height: 280px;
+                   
+                    img {
+                       display: block;
+                        width: 100%;
+                   }
+                }
+            }
+
+            &[class$='--pic'] {
+                grid-column: span 2;
+                max-height: 280px;
+
+                @include md {
+                   grid-column: span 3; 
+                   max-height: 350px;
+                   
+                   img {
+                       display: block;
+                        width: 100%;
+                   }
+                }
+
+                @include sm {
+                   grid-column: span 6;
+                    max-height: 280px;  
+                }
+            }
+        }
+
+
+    }
+
+   
+}

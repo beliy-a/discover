@@ -1,0 +1,134 @@
+.inner {
+    min-height: 100vh;
+    background: url('/src/img/inner/inner.jpg') center no-repeat;
+    background-size: cover;
+    position: relative;
+    padding: 260px 0 140px 0;
+    @include md {
+        padding-top: 150px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        @include size(100%, 100%);
+        background: linear-gradient(180deg, rgba(53, 66, 103, 0.0001) 0%, #151824 95.04%);
+
+    }
+    
+    &__wrap {
+        position: relative;
+        z-index: 2;
+        padding-bottom: 200px;
+        @include wrap(1090px);
+        @include xs {
+            padding-bottom: 100px;
+        }
+    }
+
+    h1 {
+        @include fontFamily(500);
+        font-size: 50px;
+        line-height: 1.2;
+        color: $title-color;
+        max-width: 620px;
+        margin-bottom: 20px;
+
+        @include md {
+            text-align: center;
+            margin: 0 auto 20px;
+            font-size: 40px;
+        }
+        @include xs {
+            font-size: 30px;
+        }
+    }
+
+    p {
+        @include fontFamily(500);
+        max-width: 550px;
+        font-size: 16px;
+        line-height: 1.5;
+        color: $title-color;
+        margin-bottom: 60px;
+
+        @include md {
+            & {
+                text-align: center;
+                margin: 0 auto 60px;
+            }
+        }
+    }
+
+    &__form {
+        @include flex();
+        padding-bottom: 100px;
+       
+        &__group + &__group {
+            margin-left: 60px;
+
+            @include md {
+                & {
+                    margin-left: 0;
+                    margin: 20px 0;
+                }
+            }
+        }
+
+        &__group {
+            position: relative;
+
+            &::before {
+                content: '';
+                display: inline-block;
+                @include size(20px, 20px);
+                border-radius:50%;
+                border: 2px solid $title-color; 
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            input {
+                @include fontFamily(500);
+                font-size: 18px;
+                width: 100%;
+                color: $title-color;
+                background: none;
+                border: none;
+                border-bottom: 2px solid #BFC0C5;
+                outline: none;
+                padding: 0 0 20px 40px;
+                transition: .15s ease-in-out;
+
+                
+                &::placeholder {
+                    color: $title-color;
+                }
+
+                &:focus {
+                    border-color: rgba($color: #BFC0C5, $alpha: .5);
+                }
+
+            }
+            @include md {
+                margin-bottom: 20px;
+            }
+           
+        }
+
+        @include md {
+            @include flex(column);
+            
+            button {
+                margin-left: 0;
+                font-size: 18px;
+            }
+        }
+
+
+    }
+}

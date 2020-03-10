@@ -1,0 +1,95 @@
+.tours {
+    margin-bottom: 110px;
+    @include sm {
+        margin-bottom: 60px;
+    }
+
+    &__wrap {
+        @include wrap(1260px);
+    }
+
+    &__tour {
+        @include flex($align: stretch);
+        overflow: hidden;
+        margin: 0 -20px;
+
+        [class^="tours__tour"] {
+            width: calc(100% / 2 - 40px);
+            min-height: 320px;
+            margin: 0 20px;
+            
+            @for $i from 3 through 4 {
+                &:nth-child(#{$i}) {
+                    margin-top: 40px;
+                }
+            }
+
+            @include sm {
+                width: calc(100% / 1 - 40px);
+                
+                &:nth-child(1) {
+                    order: 1;
+                }
+                &:nth-child(3) {
+                    order: 1;
+                    margin-top: 0;
+                }
+                 &:nth-child(4) {
+                    order: 1;
+                    margin-top: 0;
+                }
+            }
+        }
+
+
+        &__img {
+            overflow: hidden;
+            @include size(100%, 100%);
+
+            img {   
+                object-fit: cover;
+
+                @include sm {
+                    display: block;
+                    width: 100%;
+                }
+
+                @include xs {
+                    width: auto;
+                }
+            }
+        }
+
+
+        &__description {
+            padding: 40px;
+            @include flexBetween(column, $align: flex-start);
+
+            h2 {
+                @include fontFamily(500);
+                max-width: 360px;
+                color: $primary-color;
+                font-size: 30px;
+                margin-bottom: 40px;
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 1.5;
+                color: $primary-color;
+                margin-bottom: 40px;
+            }
+
+            a { 
+                display: block;
+                margin-top: auto;
+
+                @include xs {
+                    font-size: 14px;
+                }
+            }
+        }
+
+       
+    }
+}

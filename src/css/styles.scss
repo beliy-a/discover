@@ -1,0 +1,26 @@
+@import '../../node_modules/normalize.css/normalize.css';
+@import 'scss/fonts/fonts';
+
+@import 'scss/helpers/reset';
+@import 'scss/helpers/variables';
+@import 'scss/helpers/mixins';
+@import 'scss/helpers/scaffolding';
+
+@import 'scss/partials/_header.scss';
+@import 'scss/partials/footer';
+
+
+@import 'scss/components/main';
+@import 'scss/components/button';
+@import 'scss/components/link';
+@import 'scss/components/inner';
+@import 'scss/components/benefits';
+@import 'scss/components/places';
+@import 'scss/components/tours';
+@import 'scss/components/top';
+@import 'scss/components/video';
+@import 'scss/components/burger';
+
+
+
+
